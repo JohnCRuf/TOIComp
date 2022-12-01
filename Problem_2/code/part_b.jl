@@ -7,8 +7,8 @@ include("problem_2_fns.jl")
 z = 1.5;
 α = 0.5;
 tol = 1e-6;
-δ = 1.0;
-k_max = z^(1/(1-α));
+δ = 0.3;
+k_max = z^(1/(1-α))/δ;
 k_min = 0.1;
 k_grid = collect(range(k_min, k_max, length=500));
 v0 = zeros(length(k_grid));

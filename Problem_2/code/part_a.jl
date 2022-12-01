@@ -20,9 +20,9 @@ v_star, k_policy = brute_force(v0, z, β, α, tol, k_grid, δ)
 
 #Plotting Results and saving outputs
 df = DataFrame(k_grid = k_grid[:], v_star = v_star[:], v_true = v_true[:])
-p = Plots.plot(k_grid, [v_star v_true], label = ["v_star" "v_true"], color = ["blue" "red"])
+p = Plots.plot(k_grid, [v_star v_true], label = ["v_star" "v_true"], color = ["blue" "red"], ls = [:dot :solid])
 savefig(p, "../output/part_a_value_comparison.png")
 
 df = DataFrame(k_grid = k_grid[:], k_policy = k_policy[:], k_true = k_true[:])
-p = Plots.plot(k_grid, [k_policy k_true], label = ["Computed Policy Function" "True Policy Function"], color = ["blue" "red"])
+p = Plots.plot(k_grid, [k_policy k_true], label = ["Computed Policy Function" "True Policy Function"], color = ["blue" "red"], ls = [:dot :solid])
 savefig(p, "../output/part_a_policy_comparison.png")
